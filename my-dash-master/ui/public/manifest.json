@@ -1,0 +1,15 @@
+{
+  "short_name": "My Dash",
+  "name": "My Dash",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "128x112",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#e2e8f0",
+  "background_color": "#1a202c"
+}

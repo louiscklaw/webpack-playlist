@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Used to hide somewhat private data when taking screenshots which will be shared */
+/* .max-w-full > div:nth-child(1) a,
+.max-w-full > div:nth-child(2) li:nth-child(3) div span:last-child {
+  filter: blur(4px);
+} */
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/Ubuntu-Regular.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#root {
+  @apply mx-auto;
+  max-width: 1440px;
+}
+
+.box {
+  @apply bg-white p-4 border shadow-md rounded w-full overflow-hidden;
+}
+
+.mode-dark .box {
+  @apply bg-gray-800 border-gray-700;
+}
+
+h1,
+h2 {
+  @apply mb-2 text-center uppercase text-gray-600 text-xs;
+}
+
+h1 {
+  @apply text-sm;
+}
+
+.mode-dark input[type='text']:focus {
+  @apply border-gray-300;
+}
+
+input[type='text']:focus {
+  @apply border-gray-600;
+}
+
+input::placeholder {
+  @apply text-gray-700;
+}
+
+.mode-dark input::placeholder {
+  @apply text-gray-400;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.target:not(.hidden) + div svg {
+  transform: rotate(180deg);
+}
+
+.target:not(.hidden) + div .more {
+  @apply hidden;
+}
+
+.target.hidden + div .less {
+  @apply hidden;
+}
+
+.dot {
+  @apply w-2 h-2 inline-block rounded-full;
+}
+
+.loader {
+  border-top: 0.25rem solid rgba(0, 0, 0, 0.1);
+  border-right: 0.25rem solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.25rem solid rgba(0, 0, 0, 0.1);
+  border-left: 0.25rem solid rgba(0, 0, 0, 0.6);
+  transform: translateZ(0);
+  animation: spin 1.1s infinite linear;
+}
+
+.mode-dark .loader {
+  border-top: 0.25rem solid rgba(255, 255, 255, 0.1);
+  border-right: 0.25rem solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0.25rem solid rgba(255, 255, 255, 0.1);
+  border-left: 0.25rem solid rgba(255, 255, 255, 0.6);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
